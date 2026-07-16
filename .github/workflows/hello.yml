@@ -7,10 +7,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Step job 1
-        run: echo "job1"
+        run: echo "first job"
 
   job-2:
+    needs: job-1 #job-1が成功した後に実行
     runs-on: ubuntu-latest
     steps:
       - name: Step job 2
-        run: echo "job2"
+        run: echo "second job"
