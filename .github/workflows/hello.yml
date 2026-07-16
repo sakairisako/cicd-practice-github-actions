@@ -1,0 +1,9 @@
+name: Hello workflow
+
+on: push
+
+jobs:
+  job-hello:
+    steps:
+      - name: Step hello
+        run: echo "Hello, GitHub Actions"
