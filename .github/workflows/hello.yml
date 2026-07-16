@@ -8,6 +8,6 @@ jobs:
     steps:
       - name: Step hello 1
         run: echo "step1"
-    steps:
+
       - name: Step hello 2
         run: echo "step2"
