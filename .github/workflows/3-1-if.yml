@@ -1,0 +1,25 @@
+name: if workflow
+
+on:
+  workflow_dispatch:
+    inputs:
+      run_step:
+        description: Run conditional step
+        required: true
+        default: false
+        type: boolean
+
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step job 1
+        run: echo "first job"
+
+  job2:
+    needs: job1 #job1が成功した後に実行
+    runs-on: ubuntu-latest
+    steps:
+      - name: Step job 2
+        if: ${{ inputs.run_step }}
+        run: echo "conditional step"
